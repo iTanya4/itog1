@@ -32,10 +32,12 @@ void FoundArray (string [] firstArray, string [] newArray)
         if (firstArray[j].Length <= n)
         {
             newArray[k] = firstArray[j];
-            Console.Write($"{newArray[k]}  "); 
+            k++;
+             
         }
      }
 }
 Console.WriteLine("Новый массив:");
 FoundArray(array, newArray);
+PrintArray(newArray);
 Console.WriteLine();
