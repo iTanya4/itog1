@@ -33,7 +33,6 @@ void FoundArray (string [] firstArray, string [] newArray)
         {
             newArray[k] = firstArray[j];
             k++;
-             
         }
      }
 }
