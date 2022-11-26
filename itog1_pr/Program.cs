@@ -1,7 +1,7 @@
 ﻿
 string [] array = {"2022", "22", "Sheremetevo", "SVO", "Vnukovo", "VKO", "Domodedovo", "DME"};
 Console.WriteLine("Исходный массив:");
-
+int n =3;
 void PrintArray(string [] arr)
 {
     for (int i = 0; i < arr.Length; i++) Console.Write($"{arr[i]}  ");
@@ -11,19 +11,31 @@ void PrintArray(string [] arr)
 PrintArray(array);
 Console.WriteLine(); 
 
-void FoundArray (string [] firstarray)
-{
-     int size = firstarray.Length;
-     string [] newarray = new string [size];
-     for (int j = 0; j < size; j++)
-     {      
-        if (firstarray[j].Length <= 3)
+int size = 0;
+int count = 1;
+for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= n)
         {
-            newarray[j] = firstarray[j];
-            Console.Write($"{newarray[j]}  "); 
+            size = count;
+            count++;
+        }
+    }
+
+string [] newArray = new string [size];
+void FoundArray (string [] firstArray, string [] newArray)
+{
+     
+     int k=0;
+     for (int j = 0; j < firstArray.Length; j++)
+     {      
+        if (firstArray[j].Length <= n)
+        {
+            newArray[k] = firstArray[j];
+            Console.Write($"{newArray[k]}  "); 
         }
      }
 }
 Console.WriteLine("Новый массив:");
-FoundArray(array);
+FoundArray(array, newArray);
 Console.WriteLine();
